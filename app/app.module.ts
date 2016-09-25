@@ -4,6 +4,7 @@ import { FormsModule }	 from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { CharacterInfoComponent } from './character-info.component'
 
 @NgModule({
   imports: [ 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   	FormsModule
   ],
   declarations:	[
-  	AppComponent
+  	AppComponent,
+  	CharacterInfoComponent
   ],
   bootstrap: [ AppComponent ]
 })

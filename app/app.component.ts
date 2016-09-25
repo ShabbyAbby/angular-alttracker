@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-export class Character {
-  id: number;
-  name: string;
-}
+import { Character } from './character'
 
 const CHARACTERS: Character[] = [
   { id: 1, name: 'Shabbyabby' },
@@ -68,16 +65,7 @@ const CHARACTERS: Character[] = [
     		<span class="badge">{{character.id}}</span> {{character.name}}
     	</li>
     </ul>
-    <div *ngIf="selectedCharacter">
-    	<h2>{{selectedCharacter.name}} details!</h2>
-    	<div>
-    		<label>id: </label>{{selectedCharacter.id}}
-    	</div>
-    	<div>
-      		<label>name: </label>
-      		<input [(ngModel)]="selectedCharacter.name" placeholder="name">
-    	</div>
-    </div>
+    <character-info [character]="selectedCharacter"></character-info>
     `
 })
 
