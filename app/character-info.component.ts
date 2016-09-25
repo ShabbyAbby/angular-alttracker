@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Character } from './character';
 
  @Component({
- 	selector: 'character-info';
+ 	selector: 'character-info',
  	template: `
  	    <div *ngIf="character">
     	<h2>{{character.name}} details!</h2>

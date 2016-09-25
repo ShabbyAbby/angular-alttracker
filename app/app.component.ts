@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Character } from './character'
-
-const CHARACTERS: Character[] = [
-  { id: 1, name: 'Shabbyabby' },
-  { id: 2, name: 'Shabika' },
-  { id: 3, name: 'Felietta' }
-];
+import { CharacterService } from './character.service';
 
 @Component({
   selector: 'my-app',
@@ -66,15 +60,26 @@ const CHARACTERS: Character[] = [
     	</li>
     </ul>
     <character-info [character]="selectedCharacter"></character-info>
-    `
+    `,
+    providers: [CharacterService]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'AltTracker';
-  characters = CHARACTERS;
+  characters: Character[];
   selectedCharacter: Character;
+
+  constructor(private characterService: CharacterService) { }
 
   onSelect(character: Character): void {
   	this.selectedCharacter = character;
+  }
+
+  getCharacters(): void {
+    this.characterService.getCharacters().then(characters => this.characters = characters);
+  }
+
+    ngOnInit(): void {
+    this.getCharacters();
   }
 }
