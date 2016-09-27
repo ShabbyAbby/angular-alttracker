@@ -1,0 +1,25 @@
+<div *ngIf="character">
+   	<h2>{{character.name}} details!</h2>
+   	<ul>
+   		<li>ID: {{character.id}}</li>
+   		<li>Race: </li>
+   		<li>Class: </li>
+   		<li>
+   			Spec: <input type="radio">
+   		</li>
+   		<li>
+   		Name: <input [(ngModel)]="character.name" placeholder="name">
+   		</li>
+   		<li>
+   			Level: <input>
+   		</li>
+   		<li>
+   			Item Level: <input>
+   		</li>
+   		<li>
+   			Gold: <input>
+   		</li>
+
+   	</ul>
+   	<button (click)="goBack()">Back</button>
+</div>

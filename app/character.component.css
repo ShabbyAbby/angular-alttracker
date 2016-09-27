@@ -1,0 +1,46 @@
+
+
+.characters {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 20em;
+}
+
+.characters li {
+  color: #FFE300;
+  border-radius: 5px;
+  background-color: #004D98;
+  height: 1.5em;
+  padding: .4em;
+  margin-bottom:  .4em;
+  border: 1px #00264d solid;
+}
+
+.selected {
+  background-color: #0084ff !important;
+}
+    
+.characters li.selected:hover {
+  background-color: #66b5ff !important;
+}
+    
+.characters li:hover {
+  background-color: #0069cc;
+  left: .1em;
+}
+
+.characters .badge {
+  display: inline-block;
+  font-size: small;
+  color: #004D98;
+  padding: 0.8em 1em 0 1em;
+  background-color: #FFE300;
+  position: relative;
+  font-weight: bold;
+  left: -6px;
+  top: -6px;
+  height: 2em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
