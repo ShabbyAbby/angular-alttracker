@@ -22,6 +22,11 @@ import { Character } from './character';
  		});
  	}
 
+ 	save(): void {
+ 		this.characterService.update(this.character)
+ 		.then(() => this.goBack());
+ 	}
+
  	goBack(): void {
  		this.location.back();
  	}

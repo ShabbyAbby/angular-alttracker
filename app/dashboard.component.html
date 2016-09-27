@@ -1,8 +1,5 @@
 <h2>Top Characters</h2>
-<div class="grid grid-pad">
-  <div *ngFor="let character of characters" (click)="gotoInfo(character)" class="col-1-4">
-    <div class="module character">
+  <div *ngFor="let character of characters" (click)="gotoInfo(character)" class="character-box">
       <h4>{{character.name}}</h4>
-    </div>
+      <h3>110</h3>
   </div>
-</div>

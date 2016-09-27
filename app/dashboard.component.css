@@ -1,0 +1,25 @@
+.character-box {
+	position: relative;
+	display: inline-block;
+	width: 7.5em;
+	height: 7.5em;
+	background-color: white;
+	color: black;
+	margin-right: 1em;
+}
+
+h3 {
+	color: black;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 0.25em;
+
+}
+
+h4 {
+	position: 
+	top: 0;
+	left: 0;
+	margin: 0.25em;
+}
