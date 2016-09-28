@@ -35,4 +35,23 @@ export class CharacterComponent implements OnInit {
   gotoInfo(): void {
     this.router.navigate(['/info', this.selectedCharacter.id]);
   }
+
+  delete(character: Character): void {
+    this.characterService
+        .delete(character.id)
+        .then(() => {
+          this.characters = this.characters.filter(c => c !== character);
+          if (this.selectedCharacter === character) { this.selectedCharacter = null; }
+        });
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.characterService.create(name)
+      .then(character => {
+        this.characters.push(character);
+        this.selectedCharacter = null;
+      });
+  }
 }

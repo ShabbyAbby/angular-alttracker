@@ -10,9 +10,11 @@ import { AppComponent }           from './app.component';
 import { CharacterInfoComponent } from './character-info.component';
 import { CharacterComponent }     from './character.component';
 import { DashboardComponent }     from './dashboard.component';
+import { CharacterSearchComponenet }       from './character-search.component';
 import { CharacterService }       from './character.service';
 
 import { routing } from './app.routing';
+import './rxjs-extensions';
 
 @NgModule({
   imports: [ 
@@ -24,9 +26,10 @@ import { routing } from './app.routing';
   ],
   declarations:	[
   	AppComponent,
+    DashboardComponent,
   	CharacterInfoComponent,
   	CharacterComponent,
-  	DashboardComponent
+    CharacterSearchComponenet
   ],
   providers: [
 	  CharacterService

@@ -38,4 +38,20 @@ export class CharacterService {
 			.then(() => character)
 			.catch(this.handleError);
 	}
+
+	delete(id: number): Promise<void> {
+		const url = `${this.charactersUrl}/${id}`;
+		return this.http.delete(url, {headers: this.headers})
+			.toPromise()
+			.then(() => null)
+			.catch(this.handleError);
+	}
+
+	create(name: string): Promise<Character> {
+		return this.http
+			.post(this.charactersUrl, JSON.stringify({name: name}), {headers: this.headers})
+			.toPromise()
+			.then(res => res.json().data)
+			.catch(this.handleError);
+	}
 }
