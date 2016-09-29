@@ -1,19 +1,38 @@
   <h2>My Characters</h2>
-  <div>
-    <label>Character name:</label> <input #characterName />
-    <button (click)="add(characterName.value); characterName.value=''">Add</button>
-  </div>
-  <ul class="characters">
-    <li *ngFor="let character of characters"
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Race</th>
+      <th>Class</th>
+      <th>Lvl</th>
+      <th>iLvl</th>
+      <th>Gold</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let character of characters">
+      <td>{{character.name}}</td>
+      <td>{{character.race}}</td>
+      <td>{{character.class}}</td>
+      <td>{{character.level}}</td>
+      <td>{{character.ilvl}}</td>
+      <td>{{character.gold}}</td>
+      <td><button (click)="gotoInfo(character)">Edit</button></td>
+      <td><button (click)="delete(character); $event.stopPropagation()">Delete</button></td>
+    </tr>
+  </table>
+  <button (click)="isVisible = !isVisible">New Character</button>
+  <character-new [isVisible]="isVisible"></character-new>
+  <label>Character name:</label> <input #characterName />
+  <button (click)="add(characterName.value); characterName.value=''">Add</button>
+
+ <!--   <li *ngFor="let character of characters"
     [class.selected]="character === selectedCharacter"
     (click)="onSelect(character)">
-      <span class="badge">{{character.id}}</span><span class="text">{{character.name}}</span>
-      <button class="delete" (click)="delete(character); $event.stopPropagation()">X</button>
     </li>
-  </ul>
   <div *ngIf="selectedCharacter">
     <h2>
     {{selectedCharacter.name | uppercase}} is my character!
     </h2>
     <button (click)="gotoInfo()">View Details</button>
-  </div>
+  </div> -->

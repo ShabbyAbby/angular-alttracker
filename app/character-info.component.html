@@ -2,22 +2,22 @@
    	<h2>{{character.name}} details!</h2>
    	<ul>
    		<li>ID: {{character.id}}</li>
-   		<li>Race: </li>
-   		<li>Class: </li>
+   		<li>Race: {{character.race}}</li>
+   		<li>Class: {{character.class}} </li>
    		<li>
    			Spec: <input type="radio">
    		</li>
    		<li>
-   		Name: <input [(ngModel)]="character.name" placeholder="name">
+   		Name: <input [(ngModel)]="character.name" placeholder="Name">
    		</li>
    		<li>
-   			Level: <input>
+   			Level: <input [(ngModel)]="character.level" placeholder="Level">
    		</li>
    		<li>
-   			Item Level: <input>
+   			Item Level: <input [(ngModel)]="character.ilvl" placeholder="iLvl">
    		</li>
    		<li>
-   			Gold: <input>
+   			Gold: <input [(ngModel)]="character.gold" placeholder="Gold">
    		</li>
 
    	</ul>

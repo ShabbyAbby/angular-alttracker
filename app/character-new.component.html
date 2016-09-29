@@ -1,0 +1,40 @@
+<div *ngIf="visibility == 'hidden'">
+	<h3>Add a new character</h3>
+	<form>
+		<div>
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" required>
+		</div>
+
+		<div>
+			<label for="race">Race</label>
+			<select class="form-control" id="race" required>
+				<option *ngFor="let race of races" [value]="race">{{race}}</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="class">Class</label>
+			<select class="form-control" id="class" required>
+				<option *ngFor="let class of classes" [value]="class">{{class}}</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="level">Level</label>
+			<input type="text" class="form-control" id="level" required>
+		</div>
+
+		<div>
+			<label for="ilvl">iLvl</label>
+			<input type="text" class="form-control" id="ilvl" required>
+		</div>
+
+		<div>
+			<label for="gold">Gold</label>
+			<input type="text" class="form-control" id="gold" required>
+		</div>
+
+		<button type="submit">Add</button>
+	</form>
+</div>

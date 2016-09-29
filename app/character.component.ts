@@ -32,8 +32,8 @@ export class CharacterComponent implements OnInit {
     this.getCharacters();
   }
 
-  gotoInfo(): void {
-    this.router.navigate(['/info', this.selectedCharacter.id]);
+  gotoInfo(character: Character): void {
+    this.router.navigate(['/info', character.id]);
   }
 
   delete(character: Character): void {
